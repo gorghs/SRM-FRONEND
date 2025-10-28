@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DIY Project</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4CAF50",
+                        "background-light": "#F5F5F5",
+                        "background-dark": "#1a1a1a",
+                        "charcoal": "#333333",
+                        "light-gray": "#F5F5F5",
+                        "terracotta": "#E57373",
+                        "muted-blue": "#64B5F6"
+                    },
+                    fontFamily: {
+                        "display": ["Be Vietnam Pro", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-light dark:bg-background-dark">
+<div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden text-charcoal dark:text-gray-200 pb-28">
+<!-- Top App Bar -->
+<div class="sticky top-0 z-10 flex items-center bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm p-4 pb-2 justify-between border-b border-gray-200 dark:border-gray-700">
+<a href="../item_results_&_project_hub/code.html" class="flex size-12 shrink-0 items-center justify-start">
+<span class="material-symbols-outlined text-charcoal dark:text-gray-200">arrow_back</span>
+</a>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-12">DIY Project</h2>
+</div>
+<!-- Header Image -->
+<div class="@container">
+    <div class="@[480px]:px-4 @[480px]:py-3 p-0">
+        <div id="header-image" class="w-full bg-center bg-no-repeat bg-cover flex flex-col justify-end overflow-hidden @[480px]:rounded-xl min-h-80" data-alt="A beautiful tealight lantern made from a tin can, glowing warmly in a dimly lit room."></div>
+    </div>
+</div>
+<!-- Headline Text -->
+<h1 id="project-title" class="text-charcoal dark:text-gray-100 tracking-light text-[32px] font-bold leading-tight px-4 text-left pb-3 pt-4"></h1>
+<!-- Chips -->
+<div id="chips-container" class="flex gap-2 p-3 flex-wrap px-4">
+    <!-- Chips will be dynamically inserted here -->
+</div>
+<div class="px-4 py-4">
+    <div class="w-full h-px bg-gray-200 dark:bg-gray-700"></div>
+</div>
+<!-- Tools & Materials Section -->
+<section id="materials-section" class="px-4">
+    <!-- Materials will be dynamically inserted here -->
+</section>
+<!-- Step-by-Step Guide Section -->
+<section id="steps-section" class="px-4 mt-8">
+    <!-- Steps will be dynamically inserted here -->
+</section>
+<!-- Fixed Footer Action Bar -->
+<div class="fixed bottom-0 left-0 right-0 z-10 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border-t border-gray-200 dark:border-gray-700">
+<div class="flex justify-around p-2">
+<button class="flex flex-col items-center justify-center p-2 rounded-lg flex-1 gap-1 hover:bg-gray-100 dark:hover:bg-gray-800">
+<span class="material-symbols-outlined text-charcoal dark:text-gray-300">ios_share</span>
+<span class="text-xs text-charcoal dark:text-gray-300">Share</span>
+</button>
+<button class="flex flex-col items-center justify-center p-2 rounded-lg flex-1 gap-1 hover:bg-gray-100 dark:hover:bg-gray-800">
+<span class="material-symbols-outlined text-charcoal dark:text-gray-300">bookmark_add</span>
+<span class="text-xs text-charcoal dark:text-gray-300">Save</span>
+</button>
+<button class="flex flex-col items-center justify-center p-2 rounded-lg flex-1 gap-1 text-white bg-primary hover:bg-primary/90">
+<span class="material-symbols-outlined">add_a_photo</span>
+<span class="text-xs font-medium">I Made This!</span>
+</button>
+</div>
+</div>
+</div>
+<script>
+    const serverData = {
+        "Projects": {
+            "Easy": {
+                "DIY_Product": "This 'Coca-Cola Can Desk Organizer' is a vibrant, cylindrical holder perfect for keeping your workspace tidy. Crafted from a single, empty Coca-Cola can, it retains its iconic bright red color and prominent white 'Coca-Cola' script, alongside the silver accents of the top and bottom. The smooth, reflective aluminum surface adds a touch of retro charm, while its sturdy design makes it ideal for organizing pens, pencils, scissors, or other small desk accessories. It's a simple yet effective way to repurpose an everyday item into a functional and stylish office accessory.",
+                "Materials_Required": [
+                    { "Material": "Coca-Cola Can (empty and clean)", "Quantity": "1" },
+                    { "Material": "Smooth-edge Can Opener", "Quantity": "1" },
+                    { "Material": "Fine-grit Sandpaper (e.g., 220 grit)", "Quantity": "1 small sheet" },
+                    { "Material": "Dish soap and water", "Quantity": "As needed" },
+                    { "Material": "Towel", "Quantity": "1" }
+                ],
+                "Steps": [
+                    { "Step_Number": 1, "Description": "Preparation: Gather all materials in a clean, well-lit workspace. Thoroughly clean the empty Coca-Cola can inside and out with dish soap and water to remove any sticky residue, then dry it completely with a towel.", "Estimated_Time": "5 minutes", "Safety_Tips": "Ensure the can is completely dry before proceeding to avoid slips." },
+                    { "Step_Number": 2, "Description": "Remove the Top: Carefully use a smooth-edge can opener to remove the entire top lid of the Coca-Cola can. A smooth-edge can opener creates a duller, safer edge compared to traditional openers. Rotate the can opener around the rim until the lid is fully detached. Discard the lid safely.", "Estimated_Time": "5 minutes", "Safety_Tips": "Always operate the can opener carefully and away from your body. Even with a smooth-edge opener, the freshly cut rim can still be sharp. Handle with caution." },
+                    { "Step_Number": 3, "Description": "Smooth the Edge: Take a small sheet of fine-grit sandpaper. Gently sand the newly cut rim of the can. Apply light pressure and move the sandpaper in small circular motions around the entire edge until it feels smooth to the touch and there are no sharp burrs or rough spots. Rinse off any metal dust and dry thoroughly.", "Estimated_Time": "10 minutes", "Safety_Tips": "Wear gloves if you are concerned about minor abrasions. Avoid applying excessive pressure, which could create new sharp points. Always sand in a well-ventilated area." },
+                    { "Step_Number": 4, "Description": "Final Check and Use: Carefully run your finger along the rim one last time to ensure it is completely smooth and safe for everyday handling. Your new Coca-Cola can desk organizer is now ready to use! Place it on your desk and fill it with your favorite pens, pencils, or other small items.", "Estimated_Time": "2 minutes", "Safety_Tips": "Exercise caution during the final check. If any sharp spots are detected, repeat Step 3 until the rim is fully smooth." }
+                ],
+                "Difficulty_Level": { "Level": "Easy", "Explanation": "This project is categorized as Easy because it requires minimal tools and basic crafting skills. The primary challenge involves safely opening and smoothing the can's edge, which is made simpler by using a smooth-edge can opener and sandpaper. It's a quick project suitable for beginners, with a low time commitment and readily available materials." },
+                "Image_Generation_Prompt": "A brightly lit product photography shot of a single upcycled Coca-Cola can, transformed into a sleek desk organizer..."
+            },
+            "Medium": {
+                "DIY_Product": "The 'Coca-Cola Can Tealight Lantern' is an enchanting decorative piece that transforms an ordinary soda can into a source of ambient light...",
+                "Materials_Required": [
+                    { "Material": "Coca-Cola Can (empty and clean)", "Quantity": "1" },
+                    { "Material": "Smooth-edge Can Opener", "Quantity": "1" },
+                    { "Material": "Craft Knife (e.g., X-Acto knife) or small sharp scissors", "Quantity": "1" },
+                    { "Material": "Cutting Mat", "Quantity": "1" },
+                    { "Material": "Fine-tip Marker", "Quantity": "1" },
+                    { "Material": "Ruler", "Quantity": "1" },
+                    { "Material": "Fine-grit Sandpaper", "Quantity": "1 small sheet" },
+                    { "Material": "Battery-operated LED Tealight", "Quantity": "1" },
+                    { "Material": "Protective Gloves (cut-resistant recommended)", "Quantity": "1 pair" },
+                    { "Material": "Dish soap and water, towel", "Quantity": "As needed" }
+                ],
+                "Steps": [
+                    { "Step_Number": 1, "Description": "Preparation: Clean the empty Coca-Cola can thoroughly with dish soap and water, then dry completely. Put on your protective gloves and set up your cutting mat on a stable, well-lit surface. Gather all your tools.", "Estimated_Time": "10 minutes", "Safety_Tips": "Always wear protective gloves when handling cut aluminum. Ensure your workspace is clear and well-lit to prevent accidents." },
+                    { "Step_Number": 2, "Description": "Remove Top and Bottom: Using the smooth-edge can opener, carefully remove the entire top lid of the can. Once the top is removed, repeat the process to remove the bottom of the can. You should now have a hollow metal cylinder. Safely discard the removed top and bottom pieces.", "Estimated_Time": "10 minutes", "Safety_Tips": "Proceed with extreme caution. The edges created by removing both ends, even with a smooth-edge opener, can still be sharp. Keep gloves on." },
+                    { "Step_Number": 3, "Description": "Smooth Edges: Gently sand both newly cut rims of the aluminum cylinder using fine-grit sandpaper until they are smooth and safe to handle. Run your finger along each edge to verify no sharp burrs remain. Rinse off any metal dust and dry.", "Estimated_Time": "5 minutes", "Safety_Tips": "Do not remove gloves during this step. Ensure all edges are thoroughly smoothed to prevent cuts later." },
+                    { "Step_Number": 4, "Description": "Design and Mark Patterns: Using the ruler and fine-tip marker, carefully draw your desired perforation pattern onto the exterior of the can cylinder. Simple geometric shapes, dots, stars, or even stylized outlines work well. Make sure to leave some uncut space at the very top and bottom rims for structural integrity. Avoid drawing patterns too intricate or too close to each other, as this can weaken the can structure.", "Estimated_Time": "15 minutes", "Safety_Tips": "Plan your design carefully. Over-cutting can make the can flimsy and prone to bending, increasing the risk of cuts." },
+                    { "Step_Number": 5, "Description": "Cut Out Patterns: Place the marked can cylinder on your cutting mat. Using the craft knife (or small sharp scissors), carefully cut out the patterns you drew. Work slowly and apply steady, even pressure. For small holes, you can use the tip of the craft knife to gently pierce and rotate, or use a small nail and hammer on a soft surface. For larger shapes, follow your marked lines precisely. This step requires patience and a delicate touch.", "Estimated_Time": "30-45 minutes", "Safety_Tips": "This is the most critical step for safety. Always cut away from your body. Keep your non-cutting hand safely away from the blade. Replace dull blades on your craft knife as they can slip more easily. Ensure consistent pressure to avoid jagged edges. NEVER remove your protective gloves during this step." },
+                    { "Step_Number": 6, "Description": "Refine and Test: Once all patterns are cut, gently inspect the can. You can slightly adjust any bent pieces or smooth any rough edges with very light sanding. Place the battery-operated LED tealight inside the can. Turn off the room lights to admire the beautiful light patterns projected by your new lantern.", "Estimated_Time": "5 minutes", "Safety_Tips": "Be gentle when handling the now-fragile can. Avoid bending it excessively. Use only battery-operated tealights, NEVER real candles, as the aluminum can become extremely hot and ignite nearby materials." }
+                ],
+                "Difficulty_Level": { "Level": "Medium", "Explanation": "This project is categorized as Medium due to the need for precise cutting skills and careful handling of sharp aluminum..." },
+                "Image_Generation_Prompt": "A warm and inviting close-up shot of a DIY tealight lantern crafted from an upcycled Coca-Cola can..."
+            },
+            "Hard": {
+                "DIY_Product": "The 'Coca-Cola Can Miniature Relief Art Sculpture' is an elaborate and intricate artwork crafted from multiple Coca-Cola cans. This stunning piece transforms the iconic red, white, and silver aluminum into a multi-layered, textured relief sculpture, creating a dynamic visual experience. Pieces of flattened can are meticulously cut, embossed, and shaped to form a detailed composition, perhaps a stylized abstract design, a floral arrangement, or a miniature landscape. The distinctive branding is subtly integrated, celebrating the can's origin while elevating it to a sophisticated artistic statement. This sculpture showcases significant artistic skill and resourceful repurposing, making it a unique and striking decor item.",
+                "Materials_Required": [
+                    { "Material": "Coca-Cola Cans (empty and clean)", "Quantity": "3-5" },
+                    { "Material": "Smooth-edge Can Opener", "Quantity": "1" },
+                    { "Material": "Metal Snips or Heavy-duty Scissors (dedicated for crafts)", "Quantity": "1" },
+                    { "Material": "Craft Knife (e.g., X-Acto knife)", "Quantity": "1" },
+                    { "Material": "Cutting Mat", "Quantity": "1" },
+                    { "Material": "Ruler", "Quantity": "1" },
+                    { "Material": "Fine-tip Marker", "Quantity": "1" },
+                    { "Material": "Fine-grit Sandpaper", "Quantity": "1 small sheet" },
+                    { "Material": "Heavy-duty Work Gloves (cut-resistant essential)", "Quantity": "1 pair" },
+                    { "Material": "Safety Goggles", "Quantity": "1 pair" },
+                    { "Material": "Awl or Ballpoint Pen (empty, for embossing)", "Quantity": "1" },
+                    { "Material": "Strong Adhesive (e.g., E6000, super glue for metal, or hot glue gun)", "Quantity": "1 tube/gun" },
+                    { "Material": "Sturdy Backing Material (e.g., thin plywood, thick cardboard, or canvas board)", "Quantity": "1 piece (approx. 8x10 inches or similar)" },
+                    { "Material": "Small Pliers or Tweezers (for shaping small pieces)", "Quantity": "1" },
+                    { "Material": "Dish soap and water, towel", "Quantity": "As needed" }
+                ],
+                "Steps": [
+                    { "Step_Number": 1, "Description": "Preparation & Safety Setup: Thoroughly clean and dry all Coca-Cola cans. This is crucial for a clean final product. Put on heavy-duty work gloves and safety goggles. Set up your cutting mat on a stable, well-lit workspace. Ensure good ventilation. Gather all tools within reach.", "Estimated_Time": "15 minutes", "Safety_Tips": "NEVER skip wearing heavy-duty cut-resistant gloves and safety goggles. Flattening and cutting aluminum can create extremely sharp edges and small metal fragments." },
+                    { "Step_Number": 2, "Description": "Disassemble and Flatten Cans: Using the smooth-edge can opener, carefully remove both the top and bottom of each can. Once you have cylinders, make a single vertical cut along the side of each cylinder using metal snips or a craft knife. Gently unroll and flatten each can into a rectangular sheet of aluminum. Press them flat under a heavy book for a few hours if needed.", "Estimated_Time": "30-45 minutes", "Safety_Tips": "The edges after cutting can be razor-sharp. Always handle the aluminum sheets with gloves. Be slow and deliberate with cuts. Ensure no one else is in the immediate vicinity to avoid fragments." },
+                    { "Step_Number": 3, "Description": "Smooth Edges and Cut Design Elements: Lightly sand all edges of the flattened aluminum sheets to reduce sharpness. With a ruler and marker, plan your design elements. Cut various shapes – strips, circles, abstract forms, or stylized motifs – from the red, white, and silver sections of the cans. Use metal snips for larger, straighter cuts and a craft knife for finer, more intricate details. Think about how the different colors and textures of the can can be used.", "Estimated_Time": "30-50 minutes", "Safety_Tips": "Always cut on a cutting mat. Keep your fingers well clear of the cutting path. Be particularly careful with small, intricate cuts which can cause blades to slip. Change craft knife blades frequently for optimal sharpness and safety." },
+                    { "Step_Number": 4, "Description": "Emboss and Shape Pieces: Place each cut aluminum piece on a soft surface (like a stack of newspapers or a thick cloth). Using an awl, the back of a ballpoint pen, or an embossing tool, carefully emboss details onto the metal. Apply gentle pressure to create raised lines, textures, or dimples, adding depth to your design. You can also gently curl, bend, or crimp pieces using small pliers or your fingers to create three-dimensional forms.", "Estimated_Time": "45-75 minutes", "Safety_Tips": "Avoid pressing too hard during embossing, which could tear the thin aluminum. Be gentle when shaping to prevent unwanted creases or sharp bends that could cause injury." },
+                    { "Step_Number": 5, "Description": "Design Layout and Adhesion: Arrange your shaped and embossed aluminum pieces on your sturdy backing material to plan the final composition of your relief sculpture. Experiment with layering, overlapping, and positioning to create depth and visual interest. Pay close attention to how the vibrant red, crisp white, and shimmering silver colors interact. Once satisfied with the layout, carefully apply strong adhesive to the back of each aluminum piece and firmly attach them to the backing material. Start with the bottom layers and work your way up to create the relief effect. Hold each piece in place until the glue begins to set.", "Estimated_Time": "40-60 minutes", "Safety_Tips": "Work in a well-ventilated area when using strong adhesives. Follow the glue manufacturer's instructions for application and drying time. Keep fingers clear of glue and ensure a firm bond before moving to the next piece." },
+                    { "Step_Number": 6, "Description": "Curing and Final Touches: Allow the entire sculpture to dry and cure completely, which may take several hours or overnight, depending on the adhesive used. Once dry, inspect the finished piece for any loose parts or remaining sharp edges. You can add a picture hanger to the back of your backing material if you wish to display your sculpture on a wall.", "Estimated_Time": "10 minutes (plus curing time)", "Safety_Tips": "Do not rush the curing process. A fully cured adhesive ensures the durability and integrity of your artwork. Handle the finished piece carefully to avoid any accidental cuts from unnoticed sharp points." }
+                ],
+                "Difficulty_Level": { "Level": "Hard", "Explanation": "This project is categorized as Hard due to its requirement for advanced crafting techniques, multiple cans, and significant time commitment. It involves precise and intricate cutting, flattening, shaping, and embossing of thin aluminum, which demands a high level of patience, dexterity, and attention to detail. The potential for injury from sharp metal edges is significantly higher, mandating strict adherence to safety protocols and consistent use of heavy-duty protective gear. An artistic eye and experience with intricate assembly are also beneficial." },
+                "Image_Generation_Prompt": "A stunning, intricate miniature relief art sculpture, mounted on a dark, textured backing board (e.g., black wood or charcoal canvas), expertly crafted entirely from upcycled Coca-Cola cans..."
+            }
+        }
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const projectDifficulty = urlParams.get('project') || 'Medium';
+        const project = serverData.Projects[projectDifficulty];
+
+        if (!project) return;
+
+        document.title = `DIY Project - ${project.DIY_Product.split("'")[1]}`;
+
+        // Update header image and title
+        const imagePrompts = {
+            Easy: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBZn392v2pqwM2Z8vhdaXQ_m65g7SZDW8zcBWQbh0ig1fR-Onarjno-_d1b1zQD6RLSmCmPGypFjpc6z08R-YGksAsQAvdbeRL0AM6mi0uS2MUHDv7vDsozUdsFuD8cgqc8pXH-3TP-GNF75tz5pxKKD-jgJZsrTXKYDrMptnHRqabiEBosm6yn3V1mAgrltkvhL9QBlp0wMSOML8IDkBggIrl0Ic0zK-mrG9bWXoFzB89woO46jiIvnQQ58QB-ffkzxa7mAJlFKswo',
+            Medium: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDoGsjLhM2D7sPcXo0QsbEl6d6oPIsYI_RQlRedF2I-lWmpeindpeXaCJqelA62eNLzfVloowXHhYiGVDDbN_Zf06XiFkfM5QGFh-VuKxhHP4ZtTBAuaVAyPpT17J12cwKrn1KbjX_CG0IACpykzNazHvdbMX0fIut9EX5-mxo41kkxYpKTQ3_1echDkTBTIJIsYT4ygumVImKMgtD7fFfum0UF077aNZ53Xi0PYajcs-IbCwGTJSGbjlNBhkJzLAxxbob2lugwZ1Wq',
+            Hard: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCRjiZZcCINIYFqFPnmJ87a13If3IlzlgDotCFsXc_-iu0UmMMvMWApTB0HRz-Uc-Wm6vzHWSFkF97prDcMOkaEeF3lTFQIxqCuKwGOFinljm8icgJ_ztP6ulWg6A0aPQ_jSPEIafwHajfQADiCn_NBsD-89WuuW2oIXFEFtzNSWmEiP-MoIcQBLhiw1XJaizSxZx2fQ7ruM7RMjF4jus-DjD4TtVydEG_UHSeZmwJTPLPO2ETTlt0mVGnjr-SjaYLkr9H0ID_4bNX_'
+        };
+        document.getElementById('header-image').style.backgroundImage = `url('${imagePrompts[projectDifficulty]}')`;
+        document.getElementById('project-title').textContent = `How to make a ${project.DIY_Product.split("'")[1]}`;
+
+        // Update chips
+        const chipsContainer = document.getElementById('chips-container');
+        chipsContainer.innerHTML = `
+            <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-terracotta/20 dark:bg-terracotta/30 px-4">
+                <p class="text-terracotta dark:text-terracotta/90 text-sm font-medium leading-normal">${project.Difficulty_Level.Level} Difficulty</p>
+            </div>
+            <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-gray-200 dark:bg-gray-700 px-4">
+                <p class="text-charcoal dark:text-gray-200 text-sm font-medium leading-normal">Requires: ${project.Materials_Required.find(m => m.Material.includes('Can')).Quantity} Can</p>
+            </div>
+        `;
+
+        // Update materials
+        const materialsContainer = document.getElementById('materials-section');
+        materialsContainer.innerHTML = `
+            <h3 class="text-charcoal dark:text-gray-100 text-xl font-bold leading-tight tracking-[-0.015em] pb-3 pt-2">Tools & Materials</h3>
+            <div class="space-y-3">
+                ${project.Materials_Required.map(material => `
+                    <label class="flex items-center gap-3 p-3 rounded-lg bg-white dark:bg-gray-800/50">
+                        <input class="h-5 w-5 rounded border-gray-300 dark:border-gray-600 text-muted-blue focus:ring-muted-blue bg-gray-100 dark:bg-gray-700" type="checkbox"/>
+                        <span class="flex-1 text-charcoal dark:text-gray-300">${material.Material} (${material.Quantity})</span>
+                    </label>
+                `).join('')}
+            </div>
+        `;
+
+        // Update steps
+        const stepsContainer = document.getElementById('steps-section');
+        stepsContainer.innerHTML = `
+            <h3 class="text-charcoal dark:text-gray-100 text-xl font-bold leading-tight tracking-[-0.015em] pb-3 pt-2">Step-by-Step Guide</h3>
+            <div class="space-y-4">
+                ${project.Steps.map(step => `
+                    <div class="flex gap-4 p-4 rounded-xl bg-white dark:bg-gray-800/50">
+                        <div class="flex-shrink-0 text-primary font-bold text-3xl">${step.Step_Number}</div>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-charcoal dark:text-gray-200">${step.Description.split(':')[0]}</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">${step.Description.split(':').slice(1).join(':').trim()}</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">Est. Time: ${step.Estimated_Time}</p>
+                            <p class="text-xs text-red-500 dark:text-red-400 mt-1">Safety: ${step.Safety_Tips}</p>
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+        `;
+    });
+</script>
+</body></html>

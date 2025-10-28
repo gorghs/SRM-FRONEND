@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Item Details - Eco App</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+        body {
+            font-family: 'Be Vietnam Pro', sans-serif;
+        }
+    </style>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4CAF50",
+                        "background-light": "#F5F5F5",
+                        "background-dark": "#102216",
+                        "text-light": "#333333",
+                        "text-dark": "#E0E0E0",
+                        "text-subtle-light": "#888888",
+                        "text-subtle-dark": "#A0A0A0",
+                        "card-light": "#FFFFFF",
+                        "card-dark": "#1A2E22",
+                        "border-light": "#F5F5F5",
+                        "border-dark": "#2C3E34",
+                    },
+                    fontFamily: {
+                        "display": ["Be Vietnam Pro"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.75rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-light dark:bg-background-dark">
+<div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<!-- Top App Bar -->
+<div class="flex items-center bg-card-light dark:bg-card-dark p-4 pb-3 justify-between sticky top-0 z-10 shadow-sm">
+<a href="../diy_assistant_hub/code.html" class="text-text-light dark:text-text-dark flex size-12 shrink-0 items-center -ml-3">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</a>
+<h2 class="text-text-light dark:text-text-dark text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Item Details</h2>
+<div class="flex size-12 shrink-0 items-center"></div> <!-- Spacer for centering title -->
+</div>
+<!-- Main Content -->
+<main class="flex-1">
+<!-- Identification Card -->
+<div class="p-4 @container">
+<div class="flex flex-col items-stretch justify-start rounded-xl @xl:flex-row @xl:items-start shadow-sm bg-card-light dark:bg-card-dark overflow-hidden">
+<div class="w-full bg-center bg-no-repeat aspect-[4/3] bg-cover @xl:rounded-xl" data-alt="A clean, shiny aluminum beverage can on a light background" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCFoPnI5n-4YExgM3w-_Z-ZerpaF5ytso9fPq2ptWpzvLbziEsn_EAJCx9HcrkDmz3FN2zz4ZtZtCanLdzHcagXCLmOH2fanpTt-60EeZWZD-JVLa-xioIr49pRqJXiqKDG2iXozWyvjifbO_mCYiqiO8ygq5_E9JuYpnziuOsiwwQt16bqfurrIdDY9wcCbXpbiYzjYgaRbAxu3wmodKnoOMhdvOeo0XuRSxtxaj-5qKKht4JLfRMNQcy4GyF2hcLEpupHlguFCAfI");'></div>
+<div class="flex w-full min-w-72 grow flex-col items-stretch justify-center gap-1 p-4 @xl:px-4">
+<p class="text-text-light dark:text-text-dark text-xl font-bold leading-tight tracking-[-0.015em]">Aluminum Can</p>
+<div class="flex items-end gap-3 justify-between">
+<p class="text-text-subtle-light dark:text-text-subtle-dark text-base font-normal leading-normal">Material: Aluminum</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Gamification Banner -->
+<div class="px-4">
+<div class="flex items-center justify-between gap-4 rounded-lg bg-primary/10 dark:bg-primary/20 p-4 shadow-sm">
+<div class="flex flex-col gap-1 flex-[2_2_0px]">
+<p class="text-primary dark:text-green-300 text-base font-bold leading-tight">+10 Eco Points</p>
+<p class="text-text-light dark:text-text-dark text-sm font-normal leading-normal">You've earned points for identifying an item!</p>
+</div>
+<div class="text-primary dark:text-green-300">
+<span class="material-symbols-outlined text-4xl">eco</span>
+</div>
+</div>
+</div>
+<!-- Tabs -->
+<div class="pt-6 pb-3">
+<div class="flex border-b border-border-light dark:border-border-dark px-4 justify-between">
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-primary pb-[13px] pt-2 flex-1" href="#">
+<p class="text-primary text-sm font-bold leading-normal tracking-[0.015em]">Upcycle Ideas</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-text-subtle-light dark:text-text-subtle-dark pb-[13px] pt-2 flex-1" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">Recycling Tips</p>
+</a>
+</div>
+</div>
+<!-- Tab Content: Upcycle Ideas -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 px-4 pb-6" id="upcycle-content">
+    <!-- Projects will be dynamically inserted here -->
+</div>
+<!-- Tab Content: Recycling Tips (Initially Hidden) -->
+<div class="hidden px-4 pb-6" id="recycling-content">
+    <div class="bg-card-light dark:bg-card-dark p-4 rounded-lg shadow-sm flex flex-col gap-4">
+        <p class="text-text-light dark:text-text-dark leading-relaxed">Aluminum cans are highly recyclable! Follow these simple steps to ensure they're processed correctly:</p>
+        <ul class="list-disc list-inside space-y-2 text-text-subtle-light dark:text-text-subtle-dark">
+            <li>Make sure the can is empty.</li>
+            <li>Give it a quick rinse to remove any residue.</li>
+            <li>You can crush the can to save space, but it's not required.</li>
+            <li>Do not place them in plastic bags before putting them in the recycling bin.</li>
+        </ul>
+        <button class="mt-4 w-full rounded-full bg-primary py-3 px-6 text-base font-bold text-white shadow-sm transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98]">
+            Find a recycling center near me
+        </button>
+    </div>
+</div>
+</main>
+</div>
+<script>
+    const serverData = {
+        "Projects": {
+            "Easy": {
+                "DIY_Product": "This 'Coca-Cola Can Desk Organizer' is a vibrant, cylindrical holder perfect for keeping your workspace tidy. Crafted from a single, empty Coca-Cola can, it retains its iconic bright red color and prominent white 'Coca-Cola' script, alongside the silver accents of the top and bottom. The smooth, reflective aluminum surface adds a touch of retro charm, while its sturdy design makes it ideal for organizing pens, pencils, scissors, or other small desk accessories. It's a simple yet effective way to repurpose an everyday item into a functional and stylish office accessory.",
+                "Image_Generation_Prompt": "A brightly lit product photography shot of a single upcycled Coca-Cola can, transformed into a sleek desk organizer. The can retains its original vibrant red color and iconic white 'Coca-Cola' logo prominently displayed. The top rim is perfectly smooth and safe, with a subtle sheen from the sanded silver aluminum. Inside, a few colorful pens and pencils (e.g., yellow, blue, green) are neatly arranged, standing upright. The background is clean, white, and minimalistic, emphasizing the repurposed item. The overall aesthetic is modern, functional, and eco-friendly, showcasing a simple yet effective DIY project."
+            },
+            "Medium": {
+                "DIY_Product": "The 'Coca-Cola Can Tealight Lantern' is an enchanting decorative piece that transforms an ordinary soda can into a source of ambient light. This cylindrical lantern features a distinctive pattern of cut-outs meticulously crafted into its smooth, vibrant red aluminum surface, allowing the light from a battery-operated tealight to filter through and cast captivating shadows. The iconic white 'Coca-Cola' logo and silver top/bottom accents are subtly integrated into the design, lending a familiar yet artistic touch. It's perfect for creating a cozy atmosphere indoors, on a patio, or as a unique center-piece.",
+                "Image_Generation_Prompt": "A warm and inviting close-up shot of a DIY tealight lantern crafted from an upcycled Coca-Cola can. The can's vibrant red surface is adorned with a delicate, intricate geometric pattern of cut-outs (e.g., small circles, stars, or diamond shapes), through which a soft, flickering yellow glow from a battery-operated LED tealight emanates. The iconic white 'Coca-Cola' logo is still visible on the surface, subtly highlighted by the light, and the silver top and bottom edges are smooth. The lantern sits on a rustic wooden table or a dark stone surface, with a blurred background suggesting a cozy evening atmosphere. The light casts subtle shadows on the surrounding surface and illuminates the textured aluminum, creating a magical, ambient effect."
+            },
+            "Hard": {
+                "DIY_Product": "The 'Coca-Cola Can Miniature Relief Art Sculpture' is an elaborate and intricate artwork crafted from multiple Coca-Cola cans. This stunning piece transforms the iconic red, white, and silver aluminum into a multi-layered, textured relief sculpture, creating a dynamic visual experience. Pieces of flattened can are meticulously cut, embossed, and shaped to form a detailed composition, perhaps a stylized abstract design, a floral arrangement, or a miniature landscape. The distinctive branding is subtly integrated, celebrating the can's origin while elevating it to a sophisticated artistic statement. This sculpture showcases significant artistic skill and resourceful repurposing, making it a unique and striking decor item.",
+                "Image_Generation_Prompt": "A stunning, intricate miniature relief art sculpture, mounted on a dark, textured backing board (e.g., black wood or charcoal canvas), expertly crafted entirely from upcycled Coca-Cola cans. The sculpture showcases a dynamic interplay of the cans' original vibrant red, crisp white, and shimmering silver aluminum. Various shapes and forms, meticulously cut, embossed with fine details (like veins on leaves or intricate patterns), and carefully shaped, are layered to create a prominent three-dimensional relief effect. The composition could be a stylized floral arrangement with delicate petals and leaves, or an abstract geometric composition with overlapping elements, all derived from the distinct colors and text of the cans. The iconic Coca-Cola branding is subtly integrated into the design, lending a contemporary, urban art feel. The lighting is dramatic, emphasizing the textures and relief, casting captivating shadows that highlight the depth and craftsmanship. The overall image should convey a sense of sophisticated, eco-conscious artistry."
+            }
+        }
+    };
+
+    const dummyData = [
+        {
+            name: 'DIY Can Planter',
+            difficulty: 'Easy',
+            image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAo7UdbnhaBrBo3dPpQZo8YJ1wNww9uVz0pBKvAfHF_d7WEraPamveTCE2sEqKEwhFgyL11mb1QGKxVxcK-Y2Zl_tYWGyCif7F3THeGouiRWLbAhuqmkpZPwQBmcftVfPPZimzH7P5YJNPRR3uqdVWkL5I1MbQ6NmSUlVYuBzMlCM-FFuEZc6TPW_zP9TaxHP26mW9oRCrlQX6k7XgcPj1ZUSgiDGL_9FAaBjh0HolK_9SgXoVbrZ95mssS0GXbji6Din-liCteC-53'
+        },
+        {
+            name: 'Desk Organizer',
+            difficulty: 'Easy',
+            image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBZn392v2pqwM2Z8vhdaXQ_m65g7SZDW8zcBWQbh0ig1fR-Onarjno-_d1b1zQD6RLSmCmPGypFjpc6z08R-YGksAsQAvdbeRL0AM6mi0uS2MUHDv7vDsozUdsFuD8cgqc8pXH-3TP-GNF75tz5pxKKD-jgJZsrTXKYDrMptnHRqabiEBosm6yn3V1mAgrltkvhL9QBlp0wMSOML8IDkBggIrl0Ic0zK-mrG9bWXoFzB89woO46jiIvnQQ58QB-ffkzxa7mAJlFKswo'
+        },
+        {
+            name: 'Tin Can Wind Chime',
+            difficulty: 'Medium',
+            image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCRjiZZcCINIYFqFPnmJ87a13If3IlzlgDotCFsXc_-iu0UmMMvMWApTB0HRz-Uc-Wm6vzHWSFkF97prDcMOkaEeF3lTFQIxqCuKwGOFinljm8icgJ_ztP6ulWg6A0aPQ_jSPEIafwHajfQADiCn_NBsD-89WuuW2oIXFEFtzNSWmEiP-MoIcQBLhiw1XJaizSxZx2fQ7ruM7RMjF4jus-DjD4TtVydEG_UHSeZmwJTPLPO2ETTlt0mVGnjr-SjaYLkr9H0ID_4bNX_'
+        }
+    ];
+
+    function getProjects(data) {
+        if (data && data.Projects) {
+            const projects = Object.keys(data.Projects).map(difficulty => {
+                const project = data.Projects[difficulty];
+                let name = project.DIY_Product;
+                // A simple way to extract a more concise name
+                if (name.includes("'")) {
+                    name = name.split("'")[1];
+                } else if (name.includes('"')) {
+                    name = name.split('"')[1];
+                }
+                return {
+                    name: name,
+                    difficulty: difficulty,
+                    // Using placeholder as Image_Generation_Prompt is not a URL
+                    image: `https://via.placeholder.com/150/000000/FFFFFF/?text=${name.replace(/ /g, '+')}`,
+                    link: `../project_tutorial/code.html?project=${difficulty}`
+                };
+            });
+            // Re-ordering to Easy, Medium, Hard
+            const order = ['Easy', 'Medium', 'Hard'];
+            return projects.sort((a, b) => order.indexOf(a.difficulty) - order.indexOf(b.difficulty));
+        }
+        return [];
+    }
+    
+    function getDifficultyClass(difficulty) {
+        switch (difficulty.toLowerCase()) {
+            case 'easy':
+                return 'text-green-700 dark:text-green-300 bg-green-100 dark:bg-green-900/50';
+            case 'medium':
+                return 'text-orange-700 dark:text-orange-300 bg-orange-100 dark:bg-orange-900/50';
+            case 'hard':
+                return 'text-red-700 dark:text-red-300 bg-red-100 dark:bg-red-900/50';
+            default:
+                return 'text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-900/50';
+        }
+    }
+
+    function renderProjects(projects) {
+        const container = document.getElementById('upcycle-content');
+        if (!container) return;
+
+        let projectsToRender = projects;
+        if (!projectsToRender || projectsToRender.length === 0) {
+            projectsToRender = dummyData;
+        }
+
+        container.innerHTML = projectsToRender.map(project => {
+            const difficultyClass = getDifficultyClass(project.difficulty);
+            return `
+                <a href="${project.link}" class="flex flex-col bg-card-light dark:bg-card-dark rounded-lg shadow-sm overflow-hidden transition-transform duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg">
+                    <div class="w-full h-32 bg-cover bg-center" style="background-image: url('${project.image}')"></div>
+                    <div class="p-4 flex flex-col flex-grow">
+                        <h3 class="text-text-light dark:text-text-dark text-base font-bold leading-normal flex-grow">${project.name}</h3>
+                        <div class="flex justify-between items-center mt-2">
+                            <span class="text-xs font-semibold ${difficultyClass} py-1 px-3 rounded-full self-start">${project.difficulty}</span>
+                            <button class="text-text-subtle-light dark:text-text-subtle-dark hover:text-primary dark:hover:text-primary transition-colors">
+                                <span class="material-symbols-outlined">bookmark_border</span>
+                            </button>
+                        </div>
+                    </div>
+                </a>
+            `;
+        }).join('');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const projectsFromServer = getProjects(serverData);
+        renderProjects(projectsFromServer);
+    });
+
+</script>
+</body></html>

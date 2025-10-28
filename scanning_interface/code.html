@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Earthify - Scan Item</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4CAF50",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#102216",
+                    },
+                    fontFamily: {
+                        "display": ["Be Vietnam Pro", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            font-size: 24px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display">
+<div class="group/design-root relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden bg-background-dark">
+<!-- Camera View -->
+<video id="camera-feed" class="absolute inset-0 z-0 h-full w-full object-cover" autoplay playsinline></video>
+<!-- Fallback Background -->
+<div id="fallback-bg" class="absolute inset-0 z-0">
+    <img class="h-full w-full object-cover" data-alt="A background image simulating a camera view showing a textured wooden surface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBySoqS35-JE4VtuNVmGH1KrqrEQiD-EtWGIelMIWY2s7FNIFEM6xC7ABw9HsFeuztgLEBThuDopplro9yY23J04uiBaI01ecXWOues5RntpBJoMLTb9lyNW9Scmjnb6mkHWc1jqZ2d0kxk3zIlbo9b9C1FVeqGtJR0cvFR2NzYNGHEVIiHp7fbSNsC2uUqYslF2zxbodYKZZHqs22YMLbtLnMNo-ZQBi9wUZrDwCAlSYTCY7dksrlUWiM0z6U_MCeJwZKN0XdQyglJ"/>
+    <div class="absolute inset-0 bg-black/30"></div>
+</div>
+
+<!-- UI Overlay -->
+<div class="relative z-10 flex h-screen flex-col">
+<!-- Top App Bar -->
+<div class="flex items-center justify-between p-4 pb-2">
+<a href="../diy_assistant_hub/code.html" class="flex size-10 shrink-0 items-center justify-center rounded-full bg-black/40 text-white">
+<span class="material-symbols-outlined">arrow_back</span>
+</a>
+<button class="flex size-10 shrink-0 items-center justify-center rounded-full bg-black/40 text-white">
+<span class="material-symbols-outlined">flash_on</span>
+</button>
+</div>
+<!-- Main Content Area -->
+<div class="flex flex-1 flex-col items-center justify-center p-4">
+<!-- Guidance Overlay and Text -->
+<div class="flex h-64 w-64 items-center justify-center">
+<div class="relative size-full rounded-xl border-2 border-dashed border-white/80"></div>
+</div>
+<p class="text-white text-base font-normal leading-normal pb-3 pt-6 px-4 text-center">Center your item</p>
+<!-- Segmented Buttons -->
+<div class="flex px-4 py-3">
+<div class="flex h-12 w-64 flex-1 items-center justify-center rounded-xl bg-black/40 p-1">
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-primary has-[:checked]:shadow-[0_0_4px_rgba(0,0,0,0.1)] has-[:checked]:text-white text-white/80 text-sm font-medium leading-normal transition-colors">
+<span class="truncate">Scan Item</span>
+<input checked="" class="invisible w-0" name="scan_mode" type="radio" value="Scan Item"/>
+</label>
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-primary has-[:checked]:shadow-[0_0_4px_rgba(0,0,0,0.1)] has-[:checked]:text-white text-white/80 text-sm font-medium leading-normal transition-colors">
+<span class="truncate">Scan Barcode</span>
+<input class="invisible w-0" name="scan_mode" type="radio" value="Scan Barcode"/>
+</label>
+</div>
+</div>
+</div>
+<!-- Bottom Camera Control -->
+<div class="flex items-center justify-center gap-6 p-4 pt-0 pb-12">
+<input type="file" id="upload-input" class="hidden" accept="image/*">
+<button id="upload-button" class="flex shrink-0 items-center justify-center rounded-full size-12 bg-black/40 text-white">
+<span class="material-symbols-outlined">photo_library</span>
+</button>
+<button id="shutter-button" disabled class="flex size-20 shrink-0 items-center justify-center rounded-full border-4 border-white bg-gray-500 text-white transition-transform active:scale-95 disabled:opacity-50">
+<span class="material-symbols-outlined !text-4xl">center_focus_strong</span>
+</button>
+<button class="flex shrink-0 items-center justify-center rounded-full size-12 bg-black/40 text-white">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+</div>
+</div>
+
+<!-- Permission Modal -->
+<div id="permission-modal" class="absolute inset-0 z-20 flex items-center justify-center bg-black/70 p-4">
+    <div class="w-full max-w-sm rounded-xl bg-white dark:bg-gray-800 p-6 text-center flex flex-col items-center shadow-2xl">
+        <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+            <span class="material-symbols-outlined text-primary text-4xl">photo_camera</span>
+        </div>
+        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Enable Your Camera</h3>
+        <p class="text-gray-600 dark:text-gray-300 mb-6">Earthify needs access to your camera to scan items. Your camera feed is processed locally and never stored.</p>
+        <div class="flex flex-col gap-3 w-full">
+            <button id="allow-button" class="w-full rounded-lg bg-primary py-3 px-6 text-base font-bold text-white shadow-sm transition-transform duration-200 hover:scale-105 active:scale-98">Allow Access</button>
+            <button id="deny-button" class="w-full rounded-lg bg-transparent py-3 px-6 text-base font-medium text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700">Deny</button>
+        </div>
+        <p id="permission-error" class="text-red-500 text-sm mt-4 hidden">Camera access denied. Please enable it in your browser settings to continue.</p>
+    </div>
+</div>
+
+</div>
+
+<script>
+    const video = document.getElementById('camera-feed');
+    const fallbackBg = document.getElementById('fallback-bg');
+    const permissionModal = document.getElementById('permission-modal');
+    const allowButton = document.getElementById('allow-button');
+    const denyButton = document.getElementById('deny-button');
+    const shutterButton = document.getElementById('shutter-button');
+    const permissionError = document.getElementById('permission-error');
+    const uploadButton = document.getElementById('upload-button');
+    const uploadInput = document.getElementById('upload-input');
+
+    async function startCamera() {
+        try {
+            const stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } });
+            video.srcObject = stream;
+            video.style.display = 'block';
+            fallbackBg.style.display = 'none';
+            permissionModal.style.display = 'none';
+            shutterButton.disabled = false;
+            shutterButton.classList.remove('bg-gray-500');
+            shutterButton.classList.add('bg-primary');
+        } catch (err) {
+            console.error("Error accessing camera: ", err);
+            permissionError.classList.remove('hidden');
+            fallbackBg.style.display = 'block';
+            video.style.display = 'none';
+        }
+    }
+
+    allowButton.addEventListener('click', startCamera);
+
+    denyButton.addEventListener('click', () => {
+        permissionModal.style.display = 'none';
+    });
+
+    shutterButton.addEventListener('click', () => {
+        if (!shutterButton.disabled) {
+            window.location.href = '../analysis_screen/code.html';
+        }
+    });
+
+    uploadButton.addEventListener('click', () => {
+        uploadInput.click();
+    });
+
+    uploadInput.addEventListener('change', () => {
+        if (uploadInput.files && uploadInput.files.length > 0) {
+            window.location.href = '../analysis_screen/code.html';
+        }
+    });
+
+    // Show the modal on page load
+    window.addEventListener('load', () => {
+        if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+            permissionModal.style.display = 'flex';
+        } else {
+            console.log('getUserMedia not supported');
+            fallbackBg.style.display = 'block';
+            video.style.display = 'none';
+        }
+    });
+</script>
+
+</body></html>

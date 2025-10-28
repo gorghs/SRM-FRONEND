@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta http-equiv="refresh" content="4;url=../item_results_&_project_hub/code.html" />
+<title>Upcycle App - Loading</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#11d452",
+              "background-light": "#f6f8f6",
+              "background-dark": "#102216",
+            },
+            fontFamily: {
+              "display": ["Be Vietnam Pro", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .loading-text {
+            display: none;
+            opacity: 0;
+            animation: fadeInOut 4s infinite;
+        }
+        .loading-text:nth-child(1) { animation-delay: 0s; }
+        .loading-text:nth-child(2) { animation-delay: 1s; }
+        .loading-text:nth-child(3) { animation-delay: 2s; }
+        .loading-text:nth-child(4) { animation-delay: 3s; }
+        @keyframes fadeInOut {
+            0%, 24%, 100% { display: none; opacity: 0; }
+            25%, 50% { display: block; opacity: 1; }
+            51%, 100% { display: none; opacity: 0; }
+        }
+        .animate-recycle-grow {
+            animation: recycleGrow 2s infinite ease-in-out;
+        }
+        @keyframes recycleGrow {
+            0%, 100% { transform: scale(1) rotate(0deg); color: #11d452; }
+            50% { transform: scale(1.1) rotate(180deg); color: #059669; }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display">
+<div class="relative flex h-screen min-h-screen w-full flex-col items-center justify-center bg-background-light dark:bg-background-dark group/design-root overflow-hidden p-4">
+<div class="flex w-full max-w-sm flex-col items-center justify-center space-y-8">
+<!-- Animated Graphic -->
+<div class="flex h-40 w-40 items-center justify-center rounded-full bg-primary/10 dark:bg-primary/20">
+<span class="material-symbols-outlined text-8xl text-primary animate-recycle-grow" data-icon="recycling">recycling</span>
+</div>
+<!-- Dynamic Text Label -->
+<div class="relative h-12 w-full text-center">
+<p class="loading-text absolute inset-x-0 text-lg font-medium text-gray-700 dark:text-gray-300">Identifying your item...</p>
+<p class="loading-text absolute inset-x-0 text-lg font-medium text-gray-700 dark:text-gray-300">Analyzing materials...</p>
+<p class="loading-text absolute inset-x-0 text-lg font-medium text-gray-700 dark:text-gray-300">Finding cool projects...</p>
+<p class="loading-text absolute inset-x-0 text-lg font-medium text-gray-700 dark:text-gray-300">Unlocking creative ideas...</p>
+</div>
+<!-- Progress Bar -->
+<div class="w-full max-w-xs">
+<div class="rounded-full bg-gray-200 dark:bg-gray-700">
+<div class="h-2 rounded-full bg-primary" style="width: 50%;"></div>
+</div>
+</div>
+</div>
+<!-- App Logo at the bottom -->
+<div class="absolute bottom-8 flex items-center space-x-2 text-gray-500 dark:text-gray-400">
+<span class="material-symbols-outlined text-xl" data-icon="eco">eco</span>
+<span class="font-bold">Earthify</span>
+</div>
+</div>
+</body></html>
